@@ -4,7 +4,7 @@ on: [pull_request, push]
 
 jobs:
   test:
-    name: OWASP ZAP
+    name: OWASP ZAP SCANS
     runs-on: ubuntu-latest
     
     steps:
@@ -24,4 +24,4 @@ jobs:
            # The title for the GitHub issue to be created
           issue_title: # optional, default is ZAP Full Scan Report
           # The action status will be set to fail if ZAP identifies any alerts during the full scan
-          fail_action: # optional
+          fail_action: true
