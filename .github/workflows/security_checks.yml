@@ -1,10 +1,10 @@
 
 name: Security Checks
 on: pull_request
-  # You may pin to the exact commit or the version.
-  # uses: zaproxy/action-full-scan@68d7520aa6d6171629a505cef70eb3c3c61ea0cd
+
 jobs:
-  build:
+  test:
+    name: OWASP ZAP
     runs-on: ubuntu-latest
     
     steps:
