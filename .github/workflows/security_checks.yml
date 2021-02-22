@@ -1,0 +1,26 @@
+
+name: Security Checks
+on: pull_request
+  # You may pin to the exact commit or the version.
+  # uses: zaproxy/action-full-scan@68d7520aa6d6171629a505cef70eb3c3c61ea0cd
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: zaproxy/action-full-scan@v0.2.0
+      - name: OWASP ZAP
+        # GitHub Token to create issues in the repository
+        token: # optional, default is ${{ github.token }}
+        # Target URL
+        target: 
+        # Relative path of the ZAP configuration file
+        rules_file_name: # optional
+        # The Docker file to be executed
+        docker_name: # default is owasp/zap2docker-stable
+        # Additional command line options
+        cmd_options: # optional
+         # The title for the GitHub issue to be created
+        issue_title: # optional, default is ZAP Full Scan Report
+        # The action status will be set to fail if ZAP identifies any alerts during the full scan
+        fail_action: # optional
