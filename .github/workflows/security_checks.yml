@@ -12,7 +12,7 @@ jobs:
        - name: Building Docker Node-Goat Image
          run: docker-compose build
        - name: Launching the app
-         run: docker-compose up
+         run: docker-compose up --detach
          
        - name: OWASP ZAP
          uses: zaproxy/action-full-scan@v0.2.0
